@@ -1,2 +1,2 @@
-# Hello World
-run "node helloworld.js" in the console to see the effects :)
+# Basic HTTP Server
+A first Node app
