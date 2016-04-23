@@ -1,2 +1,2 @@
-# NodeJSDojo
-My personal NodeJS learning dojo 
+# Node.js Dojo
+My personal Node.js learning dojo 
