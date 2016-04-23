@@ -6,7 +6,10 @@ var onRequest = function(request, response) {
     response.write("Hello World");
     response.end();
 }
+var start = function start() {
+    onRequest;
+    http.createServer(onRequest).listen(8888);
+    console.log("Server has started.");
+}
 
-http.createServer(onRequest).listen(8888);
-
-console.log("Server has started.");
+exports.start = start;
