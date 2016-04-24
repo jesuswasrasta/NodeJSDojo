@@ -1,24 +1,25 @@
 var exec = require("child_process").exec;
 
-function start(){
+function start(response){
     console.log("Request handler 'start' was called.");
-    
-    var content = "empty";
-    
-    //Non-blocking operation: list files in directory
-    //Linux version
+        
+    /* Try to make a more time-consuming call to verify 
+    upload() function will not be affected
+    */
+    //exec("find \"C:\goofy.txt\"", function(error, stdout, stderr) {
     //exec("ls -lah", function(error, stdout, stderr) {
-    //Windows version
     exec("dir /B /S /W", function(error, stdout, stderr) {
-        content = stdout;
+        response.writeHead(200, {"Content-Type": "text/plain"});
+        response.write(stdout);
+        response.end();
     })
-    
-    return content;
 }
 
-function upload() {
+function upload(response) {
     console.log("Request handler 'upload' was called.");
-    return "Hello Upload";
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.write("Hello Upload");
+    response.end();
 }
 
 exports.start = start;
