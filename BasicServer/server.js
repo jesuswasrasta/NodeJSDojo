@@ -17,7 +17,7 @@ function start(route, handle) {
         
         //Event listener for end event, along with its callback function
         request.addListener("end", function () {
-            route(handle, pathname, response);
+            route(handle, pathname, response, postData);
         });
     }
 
